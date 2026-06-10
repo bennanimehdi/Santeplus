@@ -1,0 +1,11 @@
+# Anti-cache : forcer la revalidation des fichiers du site à chaque visite,
+# pour que les mises à jour s'affichent immédiatement (évite le cache navigateur obsolète).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|jsx|js|css)$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+  # Les images/logos peuvent rester en cache (rarement modifiés).
+  <FilesMatch "\.(png|jpe?g|webp|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
