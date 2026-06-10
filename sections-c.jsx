@@ -158,6 +158,10 @@ function Footer() {
           <div>
             <strong>École de Formation Paramédicale</strong>
             <p>École privée de formation paramédicale à Tétouan. Trois filières et un encadrement de proximité.</p>
+            <span className="footer-accredit">
+              <img src="assets/accreditation-ffp.png" alt="Établissement accrédité — formation professionnelle privée" />
+              Établissement accrédité
+            </span>
           </div>
         </div>
 
