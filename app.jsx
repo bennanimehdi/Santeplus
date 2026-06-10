@@ -16,7 +16,8 @@ const CONTACT = {
   tel: "05 39 71 30 46",
   telLink: "+212539713046",
   email: "contact@institutsanteplus.com",
-  whatsapp: "+212539713046",
+  whatsapp: "+212613723951",
+  whatsappAffiche: "06 13 72 39 51",
 };
 
 // Identité de l'établissement (✅ données vérifiées du logiciel de gestion).
@@ -34,56 +35,48 @@ const NAV_LINKS = [
   { id: "contact", label: "Contact" },
 ];
 
-// Chiffres clés — ✅ DONNÉES VÉRIFIÉES (année 2025-2026).
-const STATS = [
-  { value: 296, suffix: "", label: "étudiants en 2025-2026" },
-  { value: 3, suffix: "", label: "filières paramédicales" },
-  { value: 18, suffix: "", label: "membres de l'équipe" },
-  { value: 9, suffix: "", label: "enseignants" },
-];
+// Bande de chiffres retirée à la demande du client (pas d'effectifs affichés).
+const STATS = [];
 
-// Filières — ✅ noms, effectifs et niveaux vérifiés. Durées ⚠️ à confirmer (sauf Polyvalent).
+// Filières — ✅ niveaux, niveaux d'accès et durées vérifiés (données client).
 const FILIERES = [
   {
     icon: "healing",
     nom: "Aide-Soignant",
-    duree: "1 à 2 ans",
-    dureeConfirmer: true,
-    effectif: 56,
-    niveaux: ["1ère année"],
+    niveau: "Qualification",
+    acces: "3ème année secondaire",
+    duree: "1 an",
     desc: "Accompagner les patients dans les gestes du quotidien et assister l'équipe soignante avec bienveillance.",
     tone: "green",
   },
   {
     icon: "medical_services",
     nom: "Infirmier Auxiliaire",
+    niveau: "Technicien",
+    acces: "Niveau Baccalauréat",
     duree: "2 ans",
-    dureeConfirmer: true,
-    effectif: 57,
-    niveaux: ["1ère année", "2ème année"],
     desc: "Réaliser les soins de base et seconder l'infirmier dans la prise en charge des patients.",
     tone: "blue",
   },
   {
     icon: "vaccines",
     nom: "Infirmier Polyvalent",
+    niveau: "Technicien spécialisé",
+    acces: "Baccalauréat",
     duree: "3 ans",
-    dureeConfirmer: false,
-    effectif: 183,
-    niveaux: ["1ère année", "2ème année", "3ème année"],
     desc: "Maîtriser l'ensemble des soins infirmiers et intervenir dans les différents services de santé.",
     tone: "green",
   },
 ];
 
-// Atouts — ancrés sur les données vérifiées ; le dernier reste un placeholder explicite.
+// Atouts — mettent en avant le fondateur, l'équipe médicale et l'accréditation.
 const ATOUTS = [
-  { icon: "diversity_3", titre: "Un encadrement de proximité", texte: "Une équipe de 18 personnes au service de 296 étudiants." },
+  { icon: "medical_information", titre: "Une école fondée par un médecin", texte: "Dirigée par le Dr Bennani Jaafar, anesthésiste-réanimateur, garant de l'exigence médicale." },
+  { icon: "diversity_3", titre: "Une équipe pédagogique de haut niveau", texte: "Des médecins et des infirmiers expérimentés accompagnent chaque étudiant." },
+  { icon: "verified", titre: "Établissement accrédité", texte: "Formation professionnelle privée accréditée et reconnue." },
   { icon: "category", titre: "Trois filières paramédicales", texte: "Aide-soignant, infirmier auxiliaire et infirmier polyvalent." },
-  { icon: "school", titre: "Un cursus complet sur 3 ans", texte: "La filière infirmier polyvalent se déroule sur trois années." },
-  { icon: "payments", titre: "Des frais accessibles", texte: "À partir de 14 200 MAD par an, payables en 11 mensualités." },
-  { icon: "co_present", titre: "Un corps enseignant dédié", texte: "9 enseignants permanents et vacataires encadrent les promotions." },
-  { icon: "local_hospital", titre: "Stages en milieu hospitalier", texte: "[À compléter : hôpitaux et cliniques partenaires.]" },
+  { icon: "school", titre: "Des cursus d'un à trois ans", texte: "Un parcours adapté à chaque profil, de la qualification au technicien spécialisé." },
+  { icon: "local_hospital", titre: "Stages en milieu hospitalier", texte: "Une formation ancrée dans la pratique, au plus près des patients." },
 ];
 
 const GALERIE = [
@@ -111,11 +104,11 @@ const ADMISSION = [
 
 const FAQ = [
   { q: "Quelles filières propose l'école ?", r: "Trois filières paramédicales : aide-soignant, infirmier auxiliaire et infirmier polyvalent." },
-  { q: "Quelle est la durée des formations ?", r: "Le cursus d'infirmier polyvalent se déroule sur 3 ans. Les durées des filières aide-soignant et infirmier auxiliaire sont en cours de confirmation." },
-  { q: "Quels sont les frais de scolarité ?", r: "Frais d'inscription : 1 000 MAD à la rentrée, puis 1 200 MAD par mois sur 11 mensualités, soit environ 14 200 MAD par an. Des réductions peuvent être accordées au cas par cas." },
-  { q: "Quelles sont les conditions d'accès ?", r: "[À compléter : niveau scolaire requis, âge et modalités d'admission.]" },
-  { q: "Le diplôme est-il reconnu ?", r: "[À compléter : diplôme délivré et reconnaissance officielle.]" },
-  { q: "Y a-t-il des stages en milieu hospitalier ?", r: "[À compléter : hôpitaux et cliniques partenaires, durée des stages.]" },
+  { q: "Quelle est la durée des formations ?", r: "Aide-soignant : 1 an. Infirmier auxiliaire : 2 ans. Infirmier polyvalent : 3 ans." },
+  { q: "Quelles sont les conditions d'accès ?", r: "Aide-soignant : niveau 3ème année secondaire. Infirmier auxiliaire : niveau baccalauréat. Infirmier polyvalent : baccalauréat obtenu." },
+  { q: "Qui dirige l'école ?", r: "L'Institut Santé Plus a été fondé et est dirigé par le Dr Bennani Jaafar, médecin anesthésiste-réanimateur, entouré d'une équipe pédagogique de médecins et d'infirmiers de haut niveau." },
+  { q: "L'établissement est-il accrédité ?", r: "Oui, l'Institut Santé Plus est un établissement de formation professionnelle privée accrédité." },
+  { q: "Y a-t-il des stages en milieu hospitalier ?", r: "Oui, la formation inclut des stages pratiques en milieu hospitalier pour mettre en application les acquis." },
 ];
 
 /* ----------------------------------------------------------------- HOOKS  */
@@ -367,9 +360,9 @@ function Hero({ heroStyle }) {
 
           <Reveal className="hero-reassure" delay={300}>
             {[
-              { icon: "groups", t: "296 étudiants en 2025-2026" },
               { icon: "category", t: "3 filières paramédicales" },
-              { icon: "diversity_3", t: "Équipe de 18 encadrants" },
+              { icon: "verified", t: "Établissement accrédité" },
+              { icon: "medical_information", t: "Encadrement médical de haut niveau" },
             ].map((r) => (
               <span key={r.t} className="reassure-item">
                 <Icon name={r.icon} /> {r.t}
@@ -382,17 +375,17 @@ function Hero({ heroStyle }) {
           <Reveal className="hero-visual" delay={120} style={visualPar}>
             <Placeholder legende="étudiants en blouse — ambiance lumineuse" tone="blue" radius={28} className="hero-ph" />
             <div className="hero-float hero-float--a">
-              <span className="hf-ico hf-ico--green"><Icon name="groups" /></span>
+              <span className="hf-ico hf-ico--green"><Icon name="verified" /></span>
               <div>
-                <strong>296</strong>
-                <em>étudiants en 2025-2026</em>
+                <strong>Accrédité</strong>
+                <em>établissement reconnu</em>
               </div>
             </div>
             <div className="hero-float hero-float--b">
               <span className="hf-ico hf-ico--blue"><Icon name="category" /></span>
               <div>
-                <strong>3</strong>
-                <em>filières paramédicales</em>
+                <strong>3 filières</strong>
+                <em>paramédicales</em>
               </div>
             </div>
           </Reveal>
@@ -454,22 +447,25 @@ function FiliereCard({ f, delay }) {
       <div className="filiere-top">
         <span className="filiere-ico"><Icon name={f.icon} /></span>
         <span className="filiere-duree">
-          <Icon name="schedule" /> {f.duree}{f.dureeConfirmer && <em className="duree-note">à confirmer</em>}
+          <Icon name="schedule" /> {f.duree}
         </span>
       </div>
       <h3>{f.nom}</h3>
-      <span className="filiere-eff">
-        <Icon name="groups" /> <strong>{f.effectif}</strong> étudiants en 2025-2026
-      </span>
       <p className="filiere-desc">{f.desc}</p>
-      <div className="filiere-deb">
-        <span className="deb-title">Niveaux ouverts</span>
-        <ul>
-          {f.niveaux.map((n) => (
-            <li key={n}><Icon name="check_circle" /> {n}</li>
-          ))}
-        </ul>
-      </div>
+      <dl className="filiere-specs">
+        <div>
+          <dt><Icon name="workspace_premium" /> Niveau</dt>
+          <dd>{f.niveau}</dd>
+        </div>
+        <div>
+          <dt><Icon name="school" /> Niveau d'accès</dt>
+          <dd>{f.acces}</dd>
+        </div>
+        <div>
+          <dt><Icon name="schedule" /> Durée</dt>
+          <dd>{f.duree}</dd>
+        </div>
+      </dl>
       <a href="#contact" className="link-more" onClick={(e) => { e.preventDefault(); const el = document.getElementById("contact"); if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" }); }}>
         En savoir plus <Icon name="arrow_forward" />
       </a>
@@ -520,7 +516,49 @@ function Pourquoi() {
   );
 }
 
-Object.assign(window, { Stats, SectionHead, Filieres, Pourquoi });
+/* ------------------------------------------------------- DIRECTION / FONDATEUR */
+function Fondateur() {
+  return (
+    <section id="direction" className="section fondateur">
+      <div className="container">
+        <div className="fond-grid">
+          <Reveal className="fond-visual">
+            <div className="fond-portrait">
+              <Placeholder legende="Dr Bennani Jaafar — Fondateur" tone="blue" radius={24} label={false} />
+              <span className="fond-mono"><Icon name="medical_information" /></span>
+            </div>
+            <div className="fond-namecard">
+              <strong>Dr Bennani Jaafar</strong>
+              <em>Fondateur · Médecin anesthésiste-réanimateur</em>
+            </div>
+          </Reveal>
+
+          <Reveal className="fond-copy" delay={120}>
+            <span className="kicker">Direction &amp; équipe pédagogique</span>
+            <h2>Une école dirigée par un médecin</h2>
+            <p>
+              L'Institut Santé Plus a été fondé par le <strong>Dr Bennani Jaafar</strong>,
+              médecin <strong>anesthésiste-réanimateur</strong>. Sa conviction : former des
+              soignants compétents et humains, encadrés par de vrais professionnels de terrain.
+            </p>
+            <p>
+              Au quotidien, les étudiants sont accompagnés par une <strong>équipe pédagogique de
+              médecins et d'infirmiers de haut niveau</strong>, qui transmettent l'exigence
+              clinique et le sens du soin.
+            </p>
+            <ul className="fond-points">
+              <li><Icon name="check_circle" /> Fondateur médecin anesthésiste-réanimateur</li>
+              <li><Icon name="check_circle" /> Encadrement par des médecins et infirmiers expérimentés</li>
+              <li><Icon name="check_circle" /> Établissement de formation professionnelle privée accrédité</li>
+            </ul>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { Stats, SectionHead, Filieres, Pourquoi, Fondateur });
 /* =========================================================================
    sections-b.jsx : Galerie (cadre), Témoignages, Processus d'admission.
    ========================================================================= */
@@ -681,7 +719,7 @@ function Contact() {
             <SectionHead
               kicker="Contact"
               title="Parlons de votre projet"
-              sub="Une question sur une filière, l'admission ou les frais ? Notre équipe vous répond avec plaisir."
+              sub="Une question sur une filière ou l'admission ? Notre équipe vous répond avec plaisir."
             />
             <ul className="contact-list">
               <li>
@@ -698,7 +736,7 @@ function Contact() {
               </li>
               <li>
                 <span className="ci-ico ci-blue"><Icon name="chat" /></span>
-                <div><strong>WhatsApp</strong><a href={"https://wa.me/" + CONTACT.whatsapp.replace(/[^0-9]/g, "")} target="_blank" rel="noreferrer">Écrire sur WhatsApp</a></div>
+                <div><strong>WhatsApp</strong><a href={"https://wa.me/" + CONTACT.whatsapp.replace(/[^0-9]/g, "")} target="_blank" rel="noreferrer">{CONTACT.whatsappAffiche}</a></div>
               </li>
             </ul>
             {/* Carte — PLACEHOLDER : remplacer par un <iframe> Google Maps réel */}
@@ -845,11 +883,10 @@ function App() {
       <Navbar heroStyle={t.heroStyle} />
       <main>
         <Hero heroStyle={t.heroStyle} />
-        <Stats />
         <Filieres />
+        <Fondateur />
         <Pourquoi />
         <Galerie />
-        <Temoignages />
         <Admission />
         <Faq />
         <Contact />

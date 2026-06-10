@@ -32,11 +32,10 @@ function App() {
       <Navbar heroStyle={t.heroStyle} />
       <main>
         <Hero heroStyle={t.heroStyle} />
-        <Stats />
         <Filieres />
+        <Fondateur />
         <Pourquoi />
         <Galerie />
-        <Temoignages />
         <Admission />
         <Faq />
         <Contact />

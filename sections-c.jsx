@@ -66,7 +66,7 @@ function Contact() {
             <SectionHead
               kicker="Contact"
               title="Parlons de votre projet"
-              sub="Une question sur une filière, l'admission ou les frais ? Notre équipe vous répond avec plaisir."
+              sub="Une question sur une filière ou l'admission ? Notre équipe vous répond avec plaisir."
             />
             <ul className="contact-list">
               <li>
@@ -83,7 +83,7 @@ function Contact() {
               </li>
               <li>
                 <span className="ci-ico ci-blue"><Icon name="chat" /></span>
-                <div><strong>WhatsApp</strong><a href={"https://wa.me/" + CONTACT.whatsapp.replace(/[^0-9]/g, "")} target="_blank" rel="noreferrer">Écrire sur WhatsApp</a></div>
+                <div><strong>WhatsApp</strong><a href={"https://wa.me/" + CONTACT.whatsapp.replace(/[^0-9]/g, "")} target="_blank" rel="noreferrer">{CONTACT.whatsappAffiche}</a></div>
               </li>
             </ul>
             {/* Carte — PLACEHOLDER : remplacer par un <iframe> Google Maps réel */}

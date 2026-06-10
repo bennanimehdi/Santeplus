@@ -384,3 +384,39 @@ ul { margin: 0; padding: 0; list-style: none; }
   .btn { width: 100%; justify-content: center; }
   .hero-btns { flex-direction: column; }
 }
+
+/* ------------------------------------------- FILIÈRES : specs (niveau/accès/durée) */
+.filiere-specs { margin: 18px 0 4px; padding-top: 18px; border-top: 1px dashed rgba(14,58,67,.14); display: grid; gap: 13px; }
+.filiere-specs > div { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.filiere-specs dt { display: inline-flex; align-items: center; gap: 7px; margin: 0; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+.filiere-specs dt .material-symbols-rounded { font-size: 18px; color: var(--green); }
+.filiere.tone-blue .filiere-specs dt .material-symbols-rounded { color: var(--blue); }
+.filiere-specs dd { margin: 0; text-align: right; font-family: var(--font-head); font-weight: 700; color: var(--ink); font-size: .95rem; }
+
+/* ------------------------------------------------- DIRECTION / FONDATEUR */
+.fondateur { background: linear-gradient(180deg, var(--cream), #eef7f4 45%, var(--cream)); }
+.fond-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 48px; align-items: center; }
+.fond-visual { position: relative; }
+.fond-portrait { position: relative; }
+.fond-portrait .ph { aspect-ratio: 4/5; width: 100%; box-shadow: var(--shadow-lg); }
+.fond-mono { position: absolute; top: 16px; left: 16px; width: 48px; height: 48px; border-radius: 14px; background: #fff; box-shadow: var(--shadow); display: grid; place-items: center; color: var(--blue-deep); }
+.fond-mono .material-symbols-rounded { font-size: 26px; }
+.fond-namecard { position: absolute; left: 18px; right: 18px; bottom: 18px; background: rgba(255,255,255,.96); backdrop-filter: blur(4px); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow); }
+.fond-namecard strong { display: block; font-family: var(--font-head); font-weight: 700; color: var(--ink); font-size: 1.08rem; }
+.fond-namecard em { font-style: normal; font-size: .82rem; color: var(--blue-deep); font-weight: 600; }
+.fond-copy h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 6px 0 0; }
+.fond-copy p { color: var(--muted); font-size: 1.04rem; margin: 16px 0 0; line-height: 1.65; }
+.fond-points { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+.fond-points li { display: flex; align-items: center; gap: 11px; font-weight: 500; color: var(--ink); }
+.fond-points li .material-symbols-rounded { font-size: 22px; color: var(--green); flex: none; }
+
+/* ------------------------------------------------- BADGE ACCRÉDITATION */
+.accredit { display: inline-flex; align-items: center; gap: 14px; background: #fff; border-radius: 18px; padding: 12px 20px 12px 14px; box-shadow: var(--shadow); }
+.accredit img { width: 60px; height: 60px; object-fit: contain; flex: none; }
+.accredit-text strong { display: block; font-family: var(--font-head); font-weight: 700; color: var(--ink); font-size: .95rem; }
+.accredit-text em { font-style: normal; font-size: .8rem; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .fond-grid { grid-template-columns: 1fr; gap: 32px; }
+  .fond-portrait .ph { aspect-ratio: 16/12; }
+}

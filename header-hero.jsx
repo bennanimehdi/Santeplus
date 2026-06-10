@@ -134,9 +134,9 @@ function Hero({ heroStyle }) {
 
           <Reveal className="hero-reassure" delay={300}>
             {[
-              { icon: "groups", t: "296 étudiants en 2025-2026" },
               { icon: "category", t: "3 filières paramédicales" },
-              { icon: "diversity_3", t: "Équipe de 18 encadrants" },
+              { icon: "verified", t: "Établissement accrédité" },
+              { icon: "medical_information", t: "Encadrement médical de haut niveau" },
             ].map((r) => (
               <span key={r.t} className="reassure-item">
                 <Icon name={r.icon} /> {r.t}
@@ -149,17 +149,17 @@ function Hero({ heroStyle }) {
           <Reveal className="hero-visual" delay={120} style={visualPar}>
             <Placeholder legende="étudiants en blouse — ambiance lumineuse" tone="blue" radius={28} className="hero-ph" />
             <div className="hero-float hero-float--a">
-              <span className="hf-ico hf-ico--green"><Icon name="groups" /></span>
+              <span className="hf-ico hf-ico--green"><Icon name="verified" /></span>
               <div>
-                <strong>296</strong>
-                <em>étudiants en 2025-2026</em>
+                <strong>Accrédité</strong>
+                <em>établissement reconnu</em>
               </div>
             </div>
             <div className="hero-float hero-float--b">
               <span className="hf-ico hf-ico--blue"><Icon name="category" /></span>
               <div>
-                <strong>3</strong>
-                <em>filières paramédicales</em>
+                <strong>3 filières</strong>
+                <em>paramédicales</em>
               </div>
             </div>
           </Reveal>
