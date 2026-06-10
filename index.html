@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institut Santé Plus — Tétouan</title>
+
+  <!-- Polices : titres (Poppins/Sora), corps (Inter) + icônes Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles du site -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Affiche toute erreur JS directement sur la page (aide au diagnostic) -->
+  <script>
+    window.addEventListener("error", function (e) {
+      var box = document.createElement("pre");
+      box.style.cssText =
+        "position:fixed;left:0;right:0;bottom:0;z-index:99999;margin:0;padding:14px;" +
+        "background:#7a0c0c;color:#fff;font:13px/1.5 monospace;white-space:pre-wrap;max-height:45vh;overflow:auto";
+      box.textContent =
+        "Erreur : " + (e.message || e) +
+        (e.filename ? "\nFichier : " + e.filename + ":" + e.lineno : "");
+      document.body.appendChild(box);
+    });
+  </script>
+
+  <!-- React + ReactDOM + Babel (compilation du JSX dans le navigateur) -->
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7/babel.min.js"></script>
+
+  <!-- Toute l'application en un seul fichier (preset React explicite) -->
+  <script type="text/babel" data-presets="react" src="app.jsx"></script>
+</body>
+</html>
