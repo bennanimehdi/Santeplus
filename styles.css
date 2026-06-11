@@ -27,7 +27,7 @@
   --shadow:    0 18px 48px -18px rgba(14,58,67,.22);
   --shadow-lg: 0 30px 70px -24px rgba(14,58,67,.3);
 
-  --font-head: "Poppins", sans-serif;
+  --font-head: "Sora", "Poppins", sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
 
   --maxw: 1180px;
@@ -426,3 +426,22 @@ ul { margin: 0; padding: 0; list-style: none; }
   .fond-grid { grid-template-columns: 1fr; gap: 32px; justify-items: center; }
   .fond-visual { width: min(100%, 320px); }
 }
+
+/* =========================================================== ARABE / RTL */
+html[lang="ar"] { --font-head: "Cairo", "Tajawal", sans-serif; --font-body: "Cairo", "Tajawal", "Segoe UI", sans-serif; }
+html[lang="ar"] body { font-family: var(--font-body); }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4 { letter-spacing: 0; line-height: 1.32; }
+html[lang="ar"] .hero-copy h1 { line-height: 1.28; }
+html[lang="ar"] .brand-text strong { max-width: none; }
+
+/* éléments positionnés en absolu : passer à droite en RTL */
+[dir="rtl"] .filiere-ico { left: auto; right: 16px; }
+[dir="rtl"] .fond-mono { left: auto; right: 16px; }
+
+/* flèches directionnelles inversées en RTL */
+[dir="rtl"] .link-more .material-symbols-rounded,
+[dir="rtl"] .btn--primary .material-symbols-rounded { transform: scaleX(-1); }
+
+/* numéros / emails restent en LTR au sein du texte arabe */
+[dir="rtl"] .contact-list a, [dir="rtl"] .footer-col a, [dir="rtl"] .foot-addr { unicode-bidi: plaintext; }
+[dir="rtl"] .footer-col a, [dir="rtl"] .foot-addr { justify-content: flex-start; }

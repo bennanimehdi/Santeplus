@@ -1,40 +1,34 @@
 /* =========================================================================
-   main.jsx : assemble la page + panneau Tweaks (variations rapides).
+   main.jsx : assemble la page, gère la langue (FR/AR) et le sens RTL.
    ========================================================================= */
 
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "accent": "#1AA0DC",
-  "heroStyle": "centre",
-  "headFont": "Sora",
-  "radius": 20
-}/*EDITMODE-END*/;
-
-const ACCENTS = {
-  "Corail": "#F2A65A",
-  "Bleu": "#1AA0DC",
-  "Vert": "#34B24A",
-};
-
 function App() {
-  // Valeurs fixes (le panneau de réglages de l'éditeur n'est pas embarqué en production).
-  const t = TWEAK_DEFAULTS;
+  const [lang, setLang] = useState(() => {
+    try { return localStorage.getItem("lang") === "ar" ? "ar" : "fr"; } catch (e) { return "fr"; }
+  });
+  const L = CONTENT[lang];
 
-  // Applique les réglages via variables CSS sur la racine.
   useEffect(() => {
     const r = document.documentElement;
-    r.style.setProperty("--accent", t.accent);
-    r.style.setProperty("--radius", t.radius + "px");
-    r.style.setProperty("--font-head", `"${t.headFont}", "Poppins", sans-serif`);
-  }, [t.accent, t.radius, t.headFont]);
+    r.lang = lang;
+    r.dir = L.dir;
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }, [lang]);
+
+  useEffect(() => {
+    const r = document.documentElement;
+    r.style.setProperty("--accent", "#1AA0DC");
+    r.style.setProperty("--radius", "20px");
+  }, []);
 
   return (
-    <React.Fragment>
-      <Navbar heroStyle={t.heroStyle} />
+    <LangContext.Provider value={{ lang, setLang, L }}>
+      <Navbar />
       <main>
         <div className="affiche-band">
-          <img src="assets/affiche-2026.jpg?v=2" alt="Institut des Sciences Médicales Santé Plus — Formation des infirmiers, Tétouan" />
+          <img src="assets/affiche-2026.jpg?v=2" alt="Institut Santé Plus — Tétouan" />
         </div>
-        <Hero heroStyle={t.heroStyle} />
+        <Hero />
         <Filieres />
         <Fondateur />
         <Pourquoi />
@@ -43,12 +37,12 @@ function App() {
         <Faq />
         <Contact />
         <div className="accredit-bottom">
-          <img src="assets/accreditation-ffp.png?v=2" alt="Établissement de formation professionnelle privée accrédité" />
-          <span>Établissement de formation professionnelle privée accrédité</span>
+          <img src="assets/accreditation-ffp.png?v=2" alt={L.accreditBottom} />
+          <span>{L.accreditBottom}</span>
         </div>
       </main>
       <Footer />
-    </React.Fragment>
+    </LangContext.Provider>
   );
 }
 
