@@ -111,25 +111,6 @@ function Hero({ heroStyle }) {
         <span className="grid-dots"></span>
       </div>
 
-      <a
-        href="#direction"
-        className="hero-seal hero-seal--left"
-        onClick={(e) => { e.preventDefault(); goTo("direction"); }}
-        aria-label="Établissement accrédité — formation professionnelle privée"
-        title="Établissement accrédité"
-      >
-        <img src="assets/accreditation-ffp.png" alt="Établissement accrédité" />
-      </a>
-      <a
-        href="#direction"
-        className="hero-seal hero-seal--right"
-        onClick={(e) => { e.preventDefault(); goTo("direction"); }}
-        aria-hidden="true"
-        tabIndex={-1}
-      >
-        <img src="assets/accreditation-ffp.png" alt="" />
-      </a>
-
       <div className="hero-inner">
         <div className="hero-copy">
           <Reveal as="span" className="pill">

@@ -151,13 +151,6 @@ function Fondateur() {
               <li><Icon name="check_circle" /> Encadrement par des médecins et infirmiers expérimentés</li>
               <li><Icon name="check_circle" /> Établissement de formation professionnelle privée accrédité</li>
             </ul>
-            <div className="accredit">
-              <img src="assets/accreditation-ffp.png" alt="Établissement de formation professionnelle privée accrédité" />
-              <span className="accredit-text">
-                <strong>Établissement accrédité</strong>
-                <em>Formation professionnelle privée reconnue</em>
-              </span>
-            </div>
           </Reveal>
         </div>
       </div>
