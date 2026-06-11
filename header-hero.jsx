@@ -40,7 +40,7 @@ function Navbar({ heroStyle }) {
       <div className="nav-inner">
         <a href="#accueil" className="brand" onClick={(e) => go(e, "accueil")} aria-label="Accueil — Institut Santé Plus">
           <span className="brand-badge">
-            <img src="assets/logo-sante-plus.png" alt="Logo Institut Santé Plus" />
+            <img src="assets/logo-sante-plus.png?v=2" alt="Logo Institut Santé Plus" />
           </span>
           <span className="brand-text">
             <strong>École de Formation Paramédicale</strong>

@@ -86,11 +86,16 @@ function Contact() {
                 <div><strong>WhatsApp</strong><a href={"https://wa.me/" + CONTACT.whatsapp.replace(/[^0-9]/g, "")} target="_blank" rel="noreferrer">{CONTACT.whatsappAffiche}</a></div>
               </li>
             </ul>
-            {/* Carte — PLACEHOLDER : remplacer par un <iframe> Google Maps réel */}
-            <div id="carte" className="map-ph" role="img" aria-label="Carte de localisation — placeholder">
-              <div className="map-grid" aria-hidden="true"></div>
-              <span className="map-pin"><Icon name="location_on" /></span>
-              <span className="map-cap">carte Google Maps — Tétouan</span>
+            {/* Carte Google Maps (intégration sans clé API) */}
+            <div id="carte" className="map-embed">
+              <iframe
+                src="https://www.google.com/maps?q=35.5686179,-5.3751904&z=17&hl=fr&output=embed"
+                title="Localisation de l'Institut Santé Plus — 50 Av. Hassan II, Tétouan"
+                loading="lazy"
+                frameBorder="0"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
 
@@ -153,7 +158,7 @@ function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <span className="brand-badge brand-badge--lg">
-            <img src="assets/logo-sante-plus.png" alt="Logo Institut Santé Plus" />
+            <img src="assets/logo-sante-plus.png?v=2" alt="Logo Institut Santé Plus" />
           </span>
           <div>
             <strong>École de Formation Paramédicale</strong>

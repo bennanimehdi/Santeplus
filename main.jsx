@@ -43,7 +43,7 @@ function App() {
         <Faq />
         <Contact />
         <div className="accredit-bottom">
-          <img src="assets/accreditation-ffp.png" alt="Établissement de formation professionnelle privée accrédité" />
+          <img src="assets/accreditation-ffp.png?v=2" alt="Établissement de formation professionnelle privée accrédité" />
           <span>Établissement de formation professionnelle privée accrédité</span>
         </div>
       </main>
