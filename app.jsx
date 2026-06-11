@@ -83,12 +83,8 @@ const ATOUTS = [
 ];
 
 const GALERIE = [
-  { legende: "salle de pratique", tone: "green", span: 2 },
-  { legende: "laboratoire", tone: "blue", span: 1 },
-  { legende: "étudiants en blouse", tone: "blue", span: 1 },
-  { legende: "cours magistral", tone: "green", span: 1 },
-  { legende: "matériel de soin", tone: "green", span: 1 },
-  { legende: "espace commun", tone: "blue", span: 2 },
+  { legende: "Façade de l'institut", image: "assets/cadre-facade.jpg" },
+  { legende: "Salle de travaux pratiques", image: "assets/cadre-salle-tp.jpg" },
 ];
 
 // Témoignages — ⚠️ à recueillir auprès d'anciens étudiants. Placeholders explicites (ne pas inventer).
@@ -573,19 +569,15 @@ function Galerie() {
       <div className="container">
         <SectionHead
           kicker="Notre cadre"
-          title="Un environnement lumineux et bien équipé"
-          sub="Salles de pratique, laboratoires et espaces de vie : un institut pensé pour apprendre dans les meilleures conditions."
+          title="Un institut équipé pour la pratique"
+          sub="Façade de l'institut, salles de travaux pratiques équipées : un cadre pensé pour apprendre dans de bonnes conditions."
         />
         <Reveal className="galerie-grid">
           {GALERIE.map((g, i) => (
-            <Placeholder
-              key={i}
-              legende={g.legende}
-              tone={g.tone}
-              radius={20}
-              className={"gal-item gal-span-" + g.span}
-              style={{ transitionDelay: (i * 60) + "ms" }}
-            />
+            <figure key={i} className="gal-photo">
+              <img src={g.image} alt={g.legende} loading="lazy" />
+              <figcaption className="gal-cap">{g.legende}</figcaption>
+            </figure>
           ))}
         </Reveal>
       </div>

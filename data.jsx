@@ -83,12 +83,8 @@ const ATOUTS = [
 ];
 
 const GALERIE = [
-  { legende: "salle de pratique", tone: "green", span: 2 },
-  { legende: "laboratoire", tone: "blue", span: 1 },
-  { legende: "étudiants en blouse", tone: "blue", span: 1 },
-  { legende: "cours magistral", tone: "green", span: 1 },
-  { legende: "matériel de soin", tone: "green", span: 1 },
-  { legende: "espace commun", tone: "blue", span: 2 },
+  { legende: "Façade de l'institut", image: "assets/cadre-facade.jpg" },
+  { legende: "Salle de travaux pratiques", image: "assets/cadre-salle-tp.jpg" },
 ];
 
 // Témoignages — ⚠️ à recueillir auprès d'anciens étudiants. Placeholders explicites (ne pas inventer).

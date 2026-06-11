@@ -9,19 +9,15 @@ function Galerie() {
       <div className="container">
         <SectionHead
           kicker="Notre cadre"
-          title="Un environnement lumineux et bien équipé"
-          sub="Salles de pratique, laboratoires et espaces de vie : un institut pensé pour apprendre dans les meilleures conditions."
+          title="Un institut équipé pour la pratique"
+          sub="Façade de l'institut, salles de travaux pratiques équipées : un cadre pensé pour apprendre dans de bonnes conditions."
         />
         <Reveal className="galerie-grid">
           {GALERIE.map((g, i) => (
-            <Placeholder
-              key={i}
-              legende={g.legende}
-              tone={g.tone}
-              radius={20}
-              className={"gal-item gal-span-" + g.span}
-              style={{ transitionDelay: (i * 60) + "ms" }}
-            />
+            <figure key={i} className="gal-photo">
+              <img src={g.image} alt={g.legende} loading="lazy" />
+              <figcaption className="gal-cap">{g.legende}</figcaption>
+            </figure>
           ))}
         </Reveal>
       </div>
