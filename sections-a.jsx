@@ -124,7 +124,7 @@ function Fondateur() {
         <div className="fond-grid">
           <Reveal className="fond-visual">
             <div className="fond-portrait">
-              <Placeholder legende="Dr Bennani Jaafar — Fondateur" tone="blue" radius={24} label={false} />
+              <img src="assets/dr-bennani.png" alt="Dr Bennani Jaafar, fondateur de l'Institut Santé Plus" className="fond-photo" />
               <span className="fond-mono"><Icon name="medical_information" /></span>
             </div>
             <div className="fond-namecard">

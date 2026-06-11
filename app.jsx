@@ -339,13 +339,21 @@ function Hero({ heroStyle }) {
 
       <a
         href="#direction"
-        className="hero-seal"
+        className="hero-seal hero-seal--left"
         onClick={(e) => { e.preventDefault(); goTo("direction"); }}
         aria-label="Établissement accrédité — formation professionnelle privée"
         title="Établissement accrédité"
       >
         <img src="assets/accreditation-ffp.png" alt="Établissement accrédité" />
-        <span className="hero-seal-tag">Accrédité</span>
+      </a>
+      <a
+        href="#direction"
+        className="hero-seal hero-seal--right"
+        onClick={(e) => { e.preventDefault(); goTo("direction"); }}
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <img src="assets/accreditation-ffp.png" alt="" />
       </a>
 
       <div className="hero-inner">
@@ -535,7 +543,7 @@ function Fondateur() {
         <div className="fond-grid">
           <Reveal className="fond-visual">
             <div className="fond-portrait">
-              <Placeholder legende="Dr Bennani Jaafar — Fondateur" tone="blue" radius={24} label={false} />
+              <img src="assets/dr-bennani.png" alt="Dr Bennani Jaafar, fondateur de l'Institut Santé Plus" className="fond-photo" />
               <span className="fond-mono"><Icon name="medical_information" /></span>
             </div>
             <div className="fond-namecard">

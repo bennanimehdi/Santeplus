@@ -397,8 +397,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .fondateur { background: linear-gradient(180deg, var(--cream), #eef7f4 45%, var(--cream)); }
 .fond-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 48px; align-items: center; }
 .fond-visual { position: relative; }
-.fond-portrait { position: relative; }
-.fond-portrait .ph { aspect-ratio: 4/5; width: 100%; box-shadow: var(--shadow-lg); }
+.fond-portrait { position: relative; aspect-ratio: 4/5; width: 100%; border-radius: 24px; overflow: hidden; background: linear-gradient(160deg, var(--sky) 0%, var(--mint) 55%, var(--green-soft) 100%); box-shadow: var(--shadow-lg); }
+.fond-photo { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 102%; width: auto; max-width: none; object-fit: contain; filter: drop-shadow(0 12px 22px rgba(14,58,67,.18)); }
 .fond-mono { position: absolute; top: 16px; left: 16px; width: 48px; height: 48px; border-radius: 14px; background: #fff; box-shadow: var(--shadow); display: grid; place-items: center; color: var(--blue-deep); }
 .fond-mono .material-symbols-rounded { font-size: 26px; }
 .fond-namecard { position: absolute; left: 18px; right: 18px; bottom: 18px; background: rgba(255,255,255,.96); backdrop-filter: blur(4px); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow); }
@@ -420,19 +420,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer-accredit img { width: 38px; height: 38px; object-fit: contain; flex: none; }
 
 /* ------------------------------------- SCEAU D'ACCRÉDITATION (hero, accrocheur) */
-.hero-seal { position: absolute; top: 96px; right: 5%; z-index: 6; width: 140px; height: 140px; border-radius: 50%; background: #fff; padding: 9px; display: grid; place-items: center; box-shadow: 0 20px 50px -14px rgba(20,93,146,.5); animation: sealPulse 2.4s ease-in-out infinite; transition: transform .3s; }
-.hero-seal:hover { transform: scale(1.06) rotate(-2deg); }
+.hero-seal { position: absolute; top: 104px; z-index: 6; width: 172px; height: 172px; border-radius: 50%; background: #fff; padding: 10px; display: grid; place-items: center; box-shadow: 0 22px 54px -14px rgba(20,93,146,.5); animation: sealPulse 2.6s ease-in-out infinite; transition: transform .3s; }
+.hero-seal--left { left: 3.5%; }
+.hero-seal--right { right: 3.5%; animation-delay: 1.3s; }
+.hero-seal:hover { transform: scale(1.07); }
 .hero-seal img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
-.hero-seal-tag { position: absolute; bottom: -11px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; padding: 4px 13px; border-radius: 100px; box-shadow: var(--shadow-sm); white-space: nowrap; }
 @keyframes sealPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(52,178,74,.55), 0 20px 50px -14px rgba(20,93,146,.5); }
-  50% { box-shadow: 0 0 0 16px rgba(52,178,74,0), 0 20px 50px -14px rgba(20,93,146,.5); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52,178,74,.55), 0 22px 54px -14px rgba(20,93,146,.5); }
+  50% { box-shadow: 0 0 0 18px rgba(52,178,74,0), 0 22px 54px -14px rgba(20,93,146,.5); }
 }
-@media (max-width: 1024px) { .hero-seal { width: 112px; height: 112px; top: 86px; right: 18px; } }
-@media (max-width: 600px) { .hero-seal { width: 86px; height: 86px; top: 70px; right: 12px; padding: 6px; } .hero-seal-tag { font-size: .6rem; padding: 3px 9px; bottom: -8px; } }
+@media (max-width: 1180px) { .hero-seal { width: 128px; height: 128px; top: 92px; } }
+@media (max-width: 760px) { .hero-seal { width: 88px; height: 88px; top: 72px; padding: 6px; } .hero-seal--left { left: 8px; } .hero-seal--right { right: 8px; } }
+@media (max-width: 460px) { .hero-seal { width: 66px; height: 66px; top: 66px; padding: 5px; } }
 @media (prefers-reduced-motion: reduce) { .hero-seal { animation: none; } }
 
 @media (max-width: 860px) {
   .fond-grid { grid-template-columns: 1fr; gap: 32px; }
-  .fond-portrait .ph { aspect-ratio: 16/12; }
+  .fond-visual { max-width: 340px; margin: 0 auto; }
 }
