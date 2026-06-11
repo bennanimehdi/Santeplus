@@ -421,11 +421,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ------------------------------------- RAPPEL ACCRÉDITATION (bas de page, centré) */
 .accredit-bottom { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: clamp(40px,6vw,68px) 20px 4px; }
-.accredit-bottom img { width: 138px; height: 138px; object-fit: contain; filter: drop-shadow(0 14px 28px rgba(20,93,146,.3)); transition: transform .3s; }
+.accredit-bottom img { width: 150px; height: 150px; object-fit: contain; background: #fff; border-radius: 20px; padding: 8px; box-shadow: var(--shadow); transition: transform .3s; }
 .accredit-bottom img:hover { transform: scale(1.05); }
 .accredit-bottom span { font-family: var(--font-head); font-weight: 600; color: var(--ink); font-size: .98rem; max-width: 360px; }
 
 @media (max-width: 860px) {
-  .fond-grid { grid-template-columns: 1fr; gap: 32px; }
-  .fond-visual { max-width: 340px; margin: 0 auto; }
+  .fond-grid { grid-template-columns: 1fr; gap: 32px; justify-items: center; }
+  .fond-visual { width: min(100%, 320px); }
 }
