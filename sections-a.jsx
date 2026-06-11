@@ -44,31 +44,31 @@ function SectionHead({ kicker, title, sub, light }) {
 function FiliereCard({ f, delay }) {
   return (
     <Reveal className={"filiere card tone-" + f.tone} delay={delay}>
-      <div className="filiere-top">
+      <div className="filiere-photo">
+        <img src={f.image} alt={"Formation " + f.nom + " — Institut Santé Plus"} loading="lazy" />
         <span className="filiere-ico"><Icon name={f.icon} /></span>
-        <span className="filiere-duree">
-          <Icon name="schedule" /> {f.duree}
-        </span>
       </div>
-      <h3>{f.nom}</h3>
-      <p className="filiere-desc">{f.desc}</p>
-      <dl className="filiere-specs">
-        <div>
-          <dt><Icon name="workspace_premium" /> Niveau</dt>
-          <dd>{f.niveau}</dd>
-        </div>
-        <div>
-          <dt><Icon name="school" /> Niveau d'accès</dt>
-          <dd>{f.acces}</dd>
-        </div>
-        <div>
-          <dt><Icon name="schedule" /> Durée</dt>
-          <dd>{f.duree}</dd>
-        </div>
-      </dl>
-      <a href="#contact" className="link-more" onClick={(e) => { e.preventDefault(); const el = document.getElementById("contact"); if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" }); }}>
-        En savoir plus <Icon name="arrow_forward" />
-      </a>
+      <div className="filiere-body">
+        <h3>{f.nom}</h3>
+        <p className="filiere-desc">{f.desc}</p>
+        <dl className="filiere-specs">
+          <div>
+            <dt><Icon name="workspace_premium" /> Niveau</dt>
+            <dd>{f.niveau}</dd>
+          </div>
+          <div>
+            <dt><Icon name="school" /> Niveau d'accès</dt>
+            <dd>{f.acces}</dd>
+          </div>
+          <div>
+            <dt><Icon name="schedule" /> Durée</dt>
+            <dd>{f.duree}</dd>
+          </div>
+        </dl>
+        <a href="#contact" className="link-more" onClick={(e) => { e.preventDefault(); const el = document.getElementById("contact"); if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" }); }}>
+          En savoir plus <Icon name="arrow_forward" />
+        </a>
+      </div>
     </Reveal>
   );
 }
