@@ -129,6 +129,7 @@ const CONTENT = {
       submit: "Envoyer ma demande",
       note: "Nous vous répondons généralement sous 24h ouvrées.",
       thanks: "Merci", success: "Votre demande a bien été enregistrée. Notre équipe vous recontactera très vite.", again: "Envoyer une autre demande",
+      sending: "Envoi en cours…", error: "Une erreur est survenue. Réessayez ou appelez-nous directement.",
     },
     footer: { desc: "École privée de formation paramédicale à Tétouan. Trois filières et un encadrement de proximité.", nav: "Navigation", filieres: "Filières", contact: "Contact", legal1: "Mentions légales", legal2: "Confidentialité", rights: "Tous droits réservés." },
     accreditBottom: "Établissement de formation professionnelle privée accrédité",
@@ -242,6 +243,7 @@ const CONTENT = {
       submit: "أرسل طلبي",
       note: "نجيبك عادةً خلال 24 ساعة عمل.",
       thanks: "شكراً", success: "تمّ تسجيل طلبك بنجاح. سيتواصل معك فريقنا قريباً جداً.", again: "إرسال طلب آخر",
+      sending: "جارٍ الإرسال…", error: "حدث خطأ. حاول مجدّداً أو اتصل بنا هاتفيّاً.",
     },
     footer: { desc: "معهد خاص للتكوين شبه الطبي بتطوان. ثلاث شُعب وتأطير قريب من الطلبة.", nav: "التنقّل", filieres: "الشُّعب", contact: "اتصل بنا", legal1: "إشعارات قانونية", legal2: "الخصوصية", rights: "جميع الحقوق محفوظة." },
     accreditBottom: "مؤسسة للتكوين المهني الخاص معتمدة",
@@ -670,12 +672,36 @@ function Contact() {
   const F = L.form;
   const [form, setForm] = useState({ nom: "", tel: "", filiere: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [err, setErr] = useState(false);
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    if (!form.nom || !form.tel) return;
-    setSent(true);
+    if (!form.nom || !form.tel || sending) return;
+    setSending(true);
+    setErr(false);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/contact@institutsanteplus.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          Nom: form.nom,
+          "Téléphone": form.tel,
+          "Filière souhaitée": form.filiere || "—",
+          Message: form.message || "—",
+          _subject: "Nouvelle demande — site Institut Santé Plus",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json();
+      if (res.ok && (data.success === "true" || data.success === true)) setSent(true);
+      else setErr(true);
+    } catch (e2) {
+      setErr(true);
+    }
+    setSending(false);
   };
 
   return (
@@ -738,9 +764,10 @@ function Contact() {
                   {F.message}
                   <textarea rows="4" value={form.message} onChange={set("message")} placeholder={F.messagePh}></textarea>
                 </label>
-                <button type="submit" className="btn btn--cta btn--block">
-                  {F.submit} <Icon name="send" />
+                <button type="submit" className="btn btn--cta btn--block" disabled={sending}>
+                  {sending ? F.sending : F.submit} <Icon name="send" />
                 </button>
+                {err && <p className="form-error">{F.error}</p>}
                 <p className="form-note">{F.note}</p>
               </form>
             ) : (

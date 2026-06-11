@@ -344,6 +344,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px var(--sky); background: #fff; }
 .contact-form textarea { resize: vertical; }
 .form-note { font-size: .84rem; color: var(--muted); text-align: center; margin: 14px 0 0; }
+.form-error { font-size: .9rem; color: #b3261e; text-align: center; margin: 12px 0 0; font-weight: 600; }
+.btn[disabled] { opacity: .65; cursor: progress; }
 .form-success { text-align: center; padding: 30px 10px; }
 .success-ico { display: inline-grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; background: var(--mint); color: var(--green); margin-bottom: 18px; }
 .success-ico .material-symbols-rounded { font-size: 44px; }

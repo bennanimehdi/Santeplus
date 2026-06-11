@@ -47,12 +47,36 @@ function Contact() {
   const F = L.form;
   const [form, setForm] = useState({ nom: "", tel: "", filiere: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [err, setErr] = useState(false);
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    if (!form.nom || !form.tel) return;
-    setSent(true);
+    if (!form.nom || !form.tel || sending) return;
+    setSending(true);
+    setErr(false);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/contact@institutsanteplus.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          Nom: form.nom,
+          "Téléphone": form.tel,
+          "Filière souhaitée": form.filiere || "—",
+          Message: form.message || "—",
+          _subject: "Nouvelle demande — site Institut Santé Plus",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json();
+      if (res.ok && (data.success === "true" || data.success === true)) setSent(true);
+      else setErr(true);
+    } catch (e2) {
+      setErr(true);
+    }
+    setSending(false);
   };
 
   return (
@@ -115,9 +139,10 @@ function Contact() {
                   {F.message}
                   <textarea rows="4" value={form.message} onChange={set("message")} placeholder={F.messagePh}></textarea>
                 </label>
-                <button type="submit" className="btn btn--cta btn--block">
-                  {F.submit} <Icon name="send" />
+                <button type="submit" className="btn btn--cta btn--block" disabled={sending}>
+                  {sending ? F.sending : F.submit} <Icon name="send" />
                 </button>
+                {err && <p className="form-error">{F.error}</p>}
                 <p className="form-note">{F.note}</p>
               </form>
             ) : (
