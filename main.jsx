@@ -31,6 +31,9 @@ function App() {
     <React.Fragment>
       <Navbar heroStyle={t.heroStyle} />
       <main>
+        <div className="affiche-band">
+          <img src="assets/affiche-2026.jpg" alt="Institut des Sciences Médicales Santé Plus — Formation des infirmiers, Tétouan" />
+        </div>
         <Hero heroStyle={t.heroStyle} />
         <Filieres />
         <Fondateur />

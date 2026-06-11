@@ -154,6 +154,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mobile-menu a:hover { background: var(--sky); }
 .mobile-menu .btn { margin-top: 8px; justify-content: center; }
 
+/* --------------------------------------------------- AFFICHE (bannière haut) */
+.affiche-band { margin-top: var(--nav-h); width: 100%; line-height: 0; background: var(--cream); }
+.affiche-band img { display: block; width: 100%; height: auto; }
+
 /* ----------------------------------------------------------------- HERO  */
 .hero { position: relative; padding: calc(var(--nav-h) + clamp(40px,7vw,80px)) 0 clamp(90px,11vw,150px); overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
