@@ -44,7 +44,7 @@ function Navbar({ heroStyle }) {
           </span>
           <span className="brand-text">
             <strong>École de Formation Paramédicale</strong>
-            <em>Tétouan · 2025-2026</em>
+            <em>Tétouan</em>
           </span>
         </a>
 
