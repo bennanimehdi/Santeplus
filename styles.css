@@ -155,7 +155,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mobile-menu .btn { margin-top: 8px; justify-content: center; }
 
 /* --------------------------------------------------- AFFICHE (bannière haut) */
-.affiche-band { margin: calc(var(--nav-h) + 16px) auto 0; width: min(100% - 28px, 820px); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); line-height: 0; }
+.affiche-band { margin-top: var(--nav-h); width: 100%; line-height: 0; box-shadow: 0 10px 26px -18px rgba(14,58,67,.5); }
 .affiche-band img { display: block; width: 100%; height: auto; }
 
 /* ----------------------------------------------------------------- HERO  */
