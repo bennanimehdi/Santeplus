@@ -5,7 +5,14 @@
     Header set Cache-Control "no-cache, must-revalidate, max-age=0"
   </FilesMatch>
   # Les images/logos peuvent rester en cache (rarement modifiés).
+  # no-transform empêche la conversion WebP (logos PNG cassés sur Safari iOS).
   <FilesMatch "\.(png|jpe?g|webp|gif|svg|ico)$">
-    Header set Cache-Control "public, max-age=86400"
+    Header set Cache-Control "public, max-age=86400, no-transform"
   </FilesMatch>
+</IfModule>
+
+# Désactiver la conversion/livraison WebP de LiteSpeed pour les images.
+<IfModule LiteSpeed>
+  RewriteEngine On
+  RewriteRule \.(jpe?g|png|gif|webp)$ - [E=Cache-Control:no-webp]
 </IfModule>
