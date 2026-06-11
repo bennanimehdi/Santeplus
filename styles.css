@@ -134,6 +134,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .lang-btn { display: inline-flex; align-items: center; gap: 4px; background: transparent; border: 1.5px solid rgba(14,58,67,.14); border-radius: 100px; padding: 7px 12px; font-family: var(--font-head); font-weight: 600; font-size: .82rem; color: var(--body); cursor: pointer; transition: border-color .2s, color .2s; }
 .lang-btn .material-symbols-rounded { font-size: 17px; }
 .lang-btn:hover { border-color: var(--blue); color: var(--blue-deep); }
+.lang-short { display: none; }
 .nav-cta { padding: 11px 20px; font-size: .92rem; }
 
 .burger { display: none; flex-direction: column; gap: 5px; width: 44px; height: 44px; align-items: center; justify-content: center; background: #fff; border: none; border-radius: 12px; box-shadow: var(--shadow-sm); cursor: pointer; }
@@ -153,6 +154,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mobile-menu a { padding: 13px 12px; font-weight: 500; border-radius: 12px; color: var(--ink); }
 .mobile-menu a:hover { background: var(--sky); }
 .mobile-menu .btn { margin-top: 8px; justify-content: center; }
+.mobile-lang { display: flex; align-items: center; gap: 8px; width: 100%; text-align: start; padding: 13px 12px; font-family: var(--font-head); font-weight: 600; font-size: 1rem; color: var(--blue-deep); background: var(--sky); border: none; border-radius: 12px; cursor: pointer; margin-top: 4px; }
+.mobile-lang .material-symbols-rounded { font-size: 20px; }
 
 /* --------------------------------------------------- AFFICHE (bannière haut) */
 .affiche-band { margin-top: var(--nav-h); width: 100%; line-height: 0; box-shadow: 0 10px 26px -18px rgba(14,58,67,.5); }
@@ -377,7 +380,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
-  .lang-btn { display: none; }
+  .lang-btn { padding: 7px 11px; }
+  .lang-full { display: none; }
+  .lang-short { display: inline; }
   .stats-inner { grid-template-columns: repeat(2,1fr); gap: 32px 16px; }
   .filieres-grid, .atouts-grid, .temoins-grid { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; }

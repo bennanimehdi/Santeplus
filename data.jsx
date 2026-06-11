@@ -24,6 +24,7 @@ const CONTENT = {
   fr: {
     dir: "ltr",
     langSwitch: "العربية",
+    langSwitchShort: "AR",
     brand: { nom: "École de Formation Paramédicale", ville: "Tétouan" },
     nav: [
       { id: "accueil", label: "Accueil" },
@@ -136,6 +137,7 @@ const CONTENT = {
   ar: {
     dir: "rtl",
     langSwitch: "Français",
+    langSwitchShort: "FR",
     brand: { nom: "معهد العلوم الطبية", ville: "تطوان" },
     nav: [
       { id: "accueil", label: "الرئيسية" },

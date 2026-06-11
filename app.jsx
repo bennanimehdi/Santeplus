@@ -24,6 +24,7 @@ const CONTENT = {
   fr: {
     dir: "ltr",
     langSwitch: "العربية",
+    langSwitchShort: "AR",
     brand: { nom: "École de Formation Paramédicale", ville: "Tétouan" },
     nav: [
       { id: "accueil", label: "Accueil" },
@@ -136,6 +137,7 @@ const CONTENT = {
   ar: {
     dir: "rtl",
     langSwitch: "Français",
+    langSwitchShort: "FR",
     brand: { nom: "معهد العلوم الطبية", ville: "تطوان" },
     nav: [
       { id: "accueil", label: "الرئيسية" },
@@ -368,7 +370,9 @@ function Navbar() {
 
         <div className="nav-actions">
           <button className="lang-btn" onClick={() => setLang(lang === "fr" ? "ar" : "fr")} aria-label="Changer de langue / تغيير اللغة">
-            <Icon name="language" /> {L.langSwitch}
+            <Icon name="language" />
+            <span className="lang-full">{L.langSwitch}</span>
+            <span className="lang-short">{L.langSwitchShort}</span>
           </button>
           <a href="#contact" className="btn btn--cta nav-cta" onClick={(e) => go(e, "contact")}>
             {L.navCta}
@@ -388,6 +392,9 @@ function Navbar() {
         {L.nav.map((l) => (
           <a key={l.id} href={"#" + l.id} onClick={(e) => go(e, l.id)}>{l.label}</a>
         ))}
+        <button className="mobile-lang" onClick={() => { setLang(lang === "fr" ? "ar" : "fr"); setOpen(false); }}>
+          <Icon name="language" /> {L.langSwitch}
+        </button>
         <a href="#contact" className="btn btn--cta" onClick={(e) => go(e, "contact")}>{L.navCta}</a>
       </div>
     </header>
